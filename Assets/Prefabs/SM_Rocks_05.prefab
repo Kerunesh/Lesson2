@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 523051254253787131}
   - component: {fileID: -7838114912362852985}
   - component: {fileID: -3884301519779738138}
+  - component: {fileID: 441407372002502275}
   m_Layer: 0
   m_Name: SM_Rocks_05
   m_TagString: Untagged
@@ -136,3 +137,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.89742976, y: 1.1446505, z: 0.9027416}
   m_Center: {x: 0, y: 0.5723252, z: 0}
+--- !u!114 &441407372002502275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2586713759252572031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f708c8233b1f1a4f92f9afbaabfe0e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mask:
+    serializedVersion: 2
+    m_Bits: 128
+  _particleSystem: {fileID: 7772181048330821820, guid: d8bf780adc615d2458b0fc857e32aa50, type: 3}
+  _delay: 0
