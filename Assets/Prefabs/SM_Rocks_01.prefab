@@ -11,9 +11,7 @@ GameObject:
   - component: {fileID: 7346818648503330275}
   - component: {fileID: 9076097292529795167}
   - component: {fileID: 4228529137202235898}
-  - component: {fileID: 882666528914899837}
   - component: {fileID: 1655898592002838912}
-  - component: {fileID: -6676135946966484868}
   m_Layer: 8
   m_Name: SM_Rocks_01
   m_TagString: Untagged
@@ -89,33 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &882666528914899837
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4843524868254211946}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &1655898592002838912
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -137,20 +108,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.45268992, y: 0.32452258, z: 0.515676}
   m_Center: {x: 0, y: 0.16226129, z: -0.000000029802322}
---- !u!114 &-6676135946966484868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4843524868254211946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f708c8233b1f1a4f92f9afbaabfe0e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mask:
-    serializedVersion: 2
-    m_Bits: 128
-  _explosionPrefab: {fileID: 7367221746590117039, guid: d8bf780adc615d2458b0fc857e32aa50, type: 3}
-  _delay: 0.1

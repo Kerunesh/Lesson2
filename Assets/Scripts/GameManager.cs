@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public Text scoreText;
+    public TextMeshProUGUI scoreText;
     private int score = 0;
 
     

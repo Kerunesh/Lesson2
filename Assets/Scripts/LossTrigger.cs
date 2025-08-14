@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class LossTrigger : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay (Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Stones"))
         {
+            Rigidbody stoneRB = other.GetComponent<Rigidbody>();
 
-            if (other.transform.position.y < transform.position.y)
+            if (stoneRB != null && stoneRB.linearVelocity.y > 0.01f)
             {
                 GameManager.Instance.GameOver();
                 Destroy(other.gameObject);
