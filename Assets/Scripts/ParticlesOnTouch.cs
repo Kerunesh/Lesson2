@@ -3,17 +3,21 @@ using UnityEngine;
 public class ParticlesOnTouch : MonoBehaviour
 {
     [SerializeField] private LayerMask _mask;
-    [SerializeField] private ParticleSystem _particleSystem;
-    [SerializeField] private float _delay;
+    [SerializeField] private GameObject _explosionPrefab; 
+    [SerializeField] private float _delay = 1f;
 
     private void OnCollisionEnter(Collision collision)
     {
         if (_mask.Contains(collision.gameObject.layer))
         {
-            _particleSystem.transform.parent = null;
-            _particleSystem.Play();
+            
+            if (_explosionPrefab != null)
+            {
+                Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
+            }
+
+            
             Destroy(gameObject, _delay);
         }
     }
-    
 }
