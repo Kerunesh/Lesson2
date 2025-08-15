@@ -7,8 +7,13 @@ public class GameManager : MonoBehaviour
 {
     
     private static GameManager _instance;
+    [SerializeField] private GameObject _menuScreen;
+    [SerializeField] private TextMeshProUGUI _scoreText;
+    private int score = 0;
+    private bool isOnPause = false;
 
-    
+
+
     public static GameManager Instance
     {
         get
@@ -25,9 +30,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public TextMeshProUGUI scoreText;
-    private int score = 0;
-
     
     private void Awake()
     {
@@ -41,9 +43,24 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+
     void Start()
     {
+        _menuScreen.SetActive(false);
+        Time.timeScale = 1f;
         UpdateScoreText();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!_menuScreen.activeSelf || isOnPause)
+            {
+                TogglePause();
+            }
+        }
     }
 
     public void AddScore(int amount)
@@ -54,12 +71,35 @@ public class GameManager : MonoBehaviour
 
     void UpdateScoreText()
     {
-        scoreText.text = "Score: " + score;
+        _scoreText.text = "Score: " + score;
     }
 
     public void GameOver()
     {
         Debug.Log("GAME OVER");
+        Time.timeScale = 0f;
+        isOnPause = true;
+        _menuScreen.SetActive(true);
+    }
+
+    public void TogglePause ()
+    {
+        isOnPause = !isOnPause;
+        _menuScreen.SetActive(isOnPause);
+
+        if (isOnPause)
+        {
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
+    }
+
+    public void Retry ()
+    {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
